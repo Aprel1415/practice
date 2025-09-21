@@ -1,26 +1,9 @@
-﻿Person person = new Person();
- 
-// Устанавливаем свойство - срабатывает блок Set
-// значение "Tom" и есть передаваемое в свойство value
-person.Name = "Tom";
- 
-// Получаем значение свойства и присваиваем его переменной - срабатывает блок Get
-string personName = person.Name;
-Console.WriteLine(personName);  // Tom
- 
-class Person
-{
-    private string name = "Undefined";
- 
-    public string Name
-    {
-        get
-        {
-            return name;    // возвращаем значение свойства
-        }
-        set
-        {
-            name = value;   // устанавливаем новое значение свойства
-        }
-    }
-}
+﻿using practice;
+
+Console.WriteLine("Please, input your name here: ");
+string? name = Console.ReadLine();
+Console.WriteLine("Please, input your age here: ");
+string? ageInt = Console.ReadLine();
+int.TryParse(ageInt, out int age);
+Person artemy = new Person(name ?? "Unknown", age);
+Console.WriteLine(artemy);
