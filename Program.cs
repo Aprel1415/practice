@@ -1,23 +1,13 @@
-﻿string password = "213ab321";
-string clientsName = "Artemy";
-Console.WriteLine("Hello, sir! Please, input your password here:");
-int maxAttempts = 3;
-int firstMistake = 2;
-for (int attempt = 0; attempt < maxAttempts; attempt++)
+﻿int[] row = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+Console.WriteLine("Таблица умножения:");
+Console.WriteLine("==================");
+
+foreach (int number in row)
 {
-    string passwordNV = Console.ReadLine();
-    if (passwordNV == password)
+    for (int multiplier = 1; multiplier <= 10; multiplier++)
     {
-        Console.WriteLine($"Welcome back, {clientsName}!");
-        break;
+        Console.Write($"{number} x {multiplier} = {number * multiplier}\t");
     }
-    else
-    {
-        int triesLeft = firstMistake - attempt;
-        Console.WriteLine($"Error! Try again! {triesLeft} tries left!");
-        if (attempt == maxAttempts -1)
-        {
-            Console.WriteLine("Access denied! No more attempts.");
-        }
-    }
+    Console.WriteLine(); 
 }
