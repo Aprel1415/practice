@@ -1,37 +1,11 @@
-﻿using practice;
-
-// Calculator
-string? numberOne = Console.ReadLine();
-int.TryParse(numberOne, out int firstNum);
-string? numberTwo = Console.ReadLine();
-int.TryParse(numberTwo, out int secondNum);
-Console.WriteLine("Choose operation:");
-string? operationNumber = Console.ReadLine();
-int.TryParse(operationNumber, out int chosedOperation);
-switch (chosedOperation)
-{
-    case 1:
-        int answerForPlus = firstNum + secondNum;
-        Console.WriteLine(answerForPlus);
-        return answerForPlus;
-    case 2:
-        int answerForMin = firstNum - secondNum;
-        Console.WriteLine(answerForMin);
-        return answerForMin;
-    case 3:
-        int answerForMul = firstNum * secondNum;
-        Console.WriteLine(answerForMul);
-        return answerForMul;
-    case 4:
-        if (secondNum == 0)
-        {
-            Console.WriteLine("Error!");
-            return 0;
-        }
-
-        int answerForDec = firstNum / secondNum;
-        Console.WriteLine(answerForDec);
-        return answerForDec;
-    default:
-        return 0;
-}
+﻿Console.WriteLine("Hello! Please, tell me your name: ");
+string name = Console.ReadLine();
+Console.WriteLine("Hello! Please, tell me your age: ");
+string? age = Console.ReadLine();
+int.TryParse(age, out int ageVerified);
+Console.WriteLine("Hello! Please, tell me your favourite number: ");
+string? favNum = Console.ReadLine();
+int.TryParse(favNum, out int favNumVerified);
+int thisYear = 2025;
+int ClientsYearOfBirth = thisYear - ageVerified;
+Console.WriteLine($"Thanks! So, your name is {name}, you are {ageVerified} years old and your favourite number is {favNumVerified}! I bet your birth year is {ClientsYearOfBirth}");
