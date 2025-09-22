@@ -1,11 +1,23 @@
-﻿Console.WriteLine("Hello! Please, tell me your name: ");
-string name = Console.ReadLine();
-Console.WriteLine("Hello! Please, tell me your age: ");
-string? age = Console.ReadLine();
-int.TryParse(age, out int ageVerified);
-Console.WriteLine("Hello! Please, tell me your favourite number: ");
-string? favNum = Console.ReadLine();
-int.TryParse(favNum, out int favNumVerified);
-int thisYear = 2025;
-int ClientsYearOfBirth = thisYear - ageVerified;
-Console.WriteLine($"Thanks! So, your name is {name}, you are {ageVerified} years old and your favourite number is {favNumVerified}! I bet your birth year is {ClientsYearOfBirth}");
+﻿string password = "213ab321";
+string clientsName = "Artemy";
+Console.WriteLine("Hello, sir! Please, input your password here:");
+int maxAttempts = 3;
+int firstMistake = 2;
+for (int attempt = 0; attempt < maxAttempts; attempt++)
+{
+    string passwordNV = Console.ReadLine();
+    if (passwordNV == password)
+    {
+        Console.WriteLine($"Welcome back, {clientsName}!");
+        break;
+    }
+    else
+    {
+        int triesLeft = firstMistake - attempt;
+        Console.WriteLine($"Error! Try again! {triesLeft} tries left!");
+        if (attempt == maxAttempts -1)
+        {
+            Console.WriteLine("Access denied! No more attempts.");
+        }
+    }
+}
